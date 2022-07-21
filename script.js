@@ -19,7 +19,7 @@ let clearBoardButton = document.querySelector("#clear-button");
 let exportButton = document.querySelector("#export-button");
 let importButton = document.querySelector("#import-button");
 let saveButton = document.querySelector("#save-button");
-cellColorPreview.style.fill = cell_color;
+cellColorPreview.style.backgroundColor = cell_color;
 
 Object.assign(String.prototype, {
   pad(size) {
@@ -373,7 +373,7 @@ saveButton.addEventListener("click", (event) => {
 });
 
 cellColorInput.addEventListener("input", () => {
-  cellColorPreview.style.fill = cellColorInput.value;
+  cellColorPreview.style.backgroundColor = cellColorInput.value;
 });
 
 applySettingButton.addEventListener("click", (event) => {

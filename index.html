@@ -7,33 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sheep board</title>
     <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="drawer.css" type="text/css" rel="stylesheet">
     <link rel="manifest" href="/static/manifest.json">
 </head>
 
 <body>
-    <canvas id="mycanvas" style="background-color: white"></canvas>
-    <div id="settings">
-        <div style="display: flex; align-items: center">
-            Cell size (px) : <input id="cell-size-input" type="number">
-            Color : <input id="cell-color-input" type="text">
-            <svg id="cell-color-preview">
-                <circle cx="10" cy="10" r="9" stroke="white" stroke-width="1.5" />
-            </svg>
-            <button id="apply-button">Apply</button>
+    <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
+    <label for="drawer-toggle" id="drawer-toggle-label"></label>
+    <nav id="drawer">
+        <div id="settings">
+            <div class="flex-center">
+                Cell size (px) : <input id="cell-size-input" type="number">
+                Color : <input id="cell-color-input" type="text">
+                <input id="cell-color-preview" style="text-align: center;" disabled>
+                <button id="apply-button">Apply</button>
+            </div>
         </div>
-    </div>
-    <br>
-    <button id="clear-button">Clear Board</button>
-    <button id="export-button">Export Preset</button>
-    <button id="import-button">Import Preset</button>
-    <button id="save-button">Save Preset</button>
-    <div id="preset" class="m-4">
-        Preset:
-    </div>
-    <div id="user-preset" class="m-4">
-        User Preset:
-    </div>
-    </div>
+        </div>
+        <br>
+        <div class="flex-center">
+            <button id="clear-button">Clear Board</button>
+            <button id="export-button">Export Preset</button>
+            <button id="import-button">Import Preset</button>
+            <button id="save-button">Save Preset</button>
+        </div>
+        <div id="settings">
+            <div id="preset" class="m-4">
+                Preset:
+            </div>
+            <div id="user-preset" class="m-4">
+                User Preset:
+            </div>
+        </div>
+    </nav>
+    <canvas id="mycanvas" style="background-color: white"></canvas>
     <script src="./script.js"></script>
     <script>
         if (!navigator.serviceWorker.controller) {
