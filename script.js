@@ -82,6 +82,11 @@ let presets = {
       0, 0, 0, 0, 0, 0, 0, 0,
     ],
   },
+  amogus: {
+    width:12,
+    height:14,
+    arr: [255,255,255,255,255,192,252,15,192,255,255,255,255,254,7,224,126],
+  }
 };
 
 let userPresets = JSON.parse(localStorage.getItem("userPresets")) || {};
